@@ -1,0 +1,7 @@
+{
+  "name": "LightingProfilePlugin",
+  "tree": {
+    "$className": "Folder",
+	"$path": "src"
+  }
+}
