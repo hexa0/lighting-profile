@@ -1,0 +1,78 @@
+{
+    "Lighting": [
+        "Ambient",
+        "Brightness",
+        "ColorShift_Bottom",
+        "ColorShift_Top",
+        "EnvironmentDiffuseScale",
+        "EnvironmentSpecularScale",
+        "GlobalShadows",
+        "OutdoorAmbient",
+        "ShadowSoftness",
+        "ClockTime",
+        "GeographicLatitude",
+        "ExposureCompensation",
+        "FogColor",
+        "FogEnd",
+        "FogStart"
+    ],
+
+    "BloomEffect": [
+        "Enabled",
+        "Intensity",
+        "Size",
+        "Threshold"
+    ],
+    "BlurEffect": [
+        "Enabled",
+        "Size"
+    ],
+    "ColorCorrectionEffect": [
+        "Enabled",
+        "Brightness",
+        "Contrast",
+        "Saturation",
+        "TintColor"
+    ],
+    "DepthOfField": [
+        "Enabled",
+        "FarIntensity",
+        "FocusDistance",
+        "InFocusRadius",
+        "NearIntensity"
+    ],
+    "SunRaysEffect": [
+        "Enabled",
+        "Intensity",
+        "Spread"
+    ],
+
+    "Sky": [
+        "CelestialBodiesShown",
+        "MoonAngularSize",
+        "MoonTextureId",
+        "SkyboxBk",
+        "SkyboxDn",
+        "SkyboxFt",
+        "SkyboxLf",
+        "SkyboxRt",
+        "SkyboxUp",
+        "StarCount",
+        "SunAngularSize",
+        "SunTextureId"
+    ],
+    "Atmosphere": [
+        "Density",
+        "Offset",
+        "Color",
+        "Decay",
+        "Glare",
+        "Haze"
+    ],
+    "Clouds": [
+        "Enabled",
+        "Cover",
+        "Density",
+        "Color"
+    ]
+}

@@ -1,0 +1,11 @@
+{
+    "unknown-class-prop": {
+        "en-us" : "WARNING: \"%s\" doesn't have any known properties, Please submit an issue at https://github.com/HexaRG/lighting-profile/issues/new or update the API if it's outdated"
+    },
+    "duplicated-name": {
+        "en-us" : "WARNING: \"%s\" doesn't have a unique name, automatically renamed to \"%s\""
+    },
+    "duplicated-name-append": {
+        "en-us" : " - (Duplicate)"
+    }
+}
