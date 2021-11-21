@@ -1,12 +1,12 @@
 local RunService: RunService = game:GetService("RunService")
 local Lighting: Lighting = game:GetService("Lighting")
 local Terrain: Terrain = workspace:FindFirstChildOfClass("Terrain")
-local LocalizationService: LocalizationService = workspace:FindFirstChildOfClass("LocalizationService")
+local LocalizationService: LocalizationService = game:GetService("LocalizationService")
 
 local LightingProfileHandler: table = {}
 LightingProfileHandler._CLASSES = require(script.classes)
 LightingProfileHandler._LANG = require(script.lang)
-LightingProfileHandler._IS_PLUGIN = plugin ~= nil
+LightingProfileHandler._IS_PLUGIN = false
 
 function LightingProfileHandler:_GetLang(key: string): string
 	return self._LANG[key][LocalizationService.RobloxLocaleId] or self._LANG[key]["en-us"]
@@ -143,6 +143,8 @@ function LightingProfileHandler:CreateProfile(): Configuration
 				for _, key in pairs(self._CLASSES[child.ClassName]) do
 					profile.PostEffects[name][key] = child[key]
 				end
+
+				profile.PostEffects[name]["ClassName"] = child.ClassName
 			end
 		end
 	end

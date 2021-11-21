@@ -34,7 +34,7 @@
         "Saturation",
         "TintColor"
     ],
-    "DepthOfField": [
+    "DepthOfFieldEffect": [
         "Enabled",
         "FarIntensity",
         "FocusDistance",

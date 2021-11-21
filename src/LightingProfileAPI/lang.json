@@ -1,11 +1,56 @@
 {
     "unknown-class-prop": {
-        "en-us" : "WARNING: \"%s\" doesn't have any known properties, Please submit an issue at https://github.com/HexaRG/lighting-profile/issues/new or update the API if it's outdated"
+        "en-us": "WARNING: \"%s\" doesn't have any known properties, Please submit an issue at https://github.com/HexaRG/lighting-profile/issues/new or update the API if it's outdated"
     },
     "duplicated-name": {
-        "en-us" : "WARNING: \"%s\" doesn't have a unique name, automatically renamed to \"%s\""
+        "en-us": "WARNING: \"%s\" doesn't have a unique name, automatically renamed to \"%s\""
     },
     "duplicated-name-append": {
-        "en-us" : " - (Duplicate)"
+        "en-us": " - (Duplicate)"
+    },
+
+    "plugin-toolbar": {
+        "en-us" : "Lighting Profile"
+    },
+
+    "plugin-button-create-profile": {
+        "en-us" : "New profile"
+    },
+    "plugin-button-create-profile-desc": {
+        "en-us" : "Creates a new lighting profile from the current lighting"
+    },
+    "plugin-button-create-profile-icon": {
+        "en-us" : "rbxassetid://839798346"
+    },
+    "plugin-new-profile-default-name": {
+        "en-us": "New lighting profile created at %s"
+    },
+
+    "plugin-button-apply-profile": {
+        "en-us" : "Apply profile"
+    },
+    "plugin-button-apply-profile-desc": {
+        "en-us" : "Applies the currently selected lighting profile"
+    },
+    "plugin-button-apply-profile-icon": {
+        "en-us" : "rbxassetid://839798346"
+    },
+
+    "plugin-warn-apply-profile-no-selection": {
+        "en-us" : "WARNING: You must select a lighting profile"
+    },
+
+    "plugin-history-new-profile": {
+        "en-us" : "Creating lighting profile"
+    },
+    "plugin-history-new-profile-success": {
+        "en-us" : "Created lighting profile"
+    },
+
+    "plugin-history-apply-profile": {
+        "en-us" : "Changing lighting profile"
+    },
+    "plugin-history-applied-profile": {
+        "en-us" : "Changed lighting profile"
     }
 }
