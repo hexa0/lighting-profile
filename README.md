@@ -8,6 +8,6 @@ To build this plugin from scratch, use:
 rojo build -o "build/lighting-profile.rbxlx"
 ```
 
-Next, copy `lighting-profile.rbxmx` from the builds folder into Roblox Studio's plugin folder
+Next, copy `LightingProfilePlugin.rbxmx` from the builds folder into Roblox Studio's plugin folder
 
 For more help, check out [the Rojo documentation](https://rojo.space/docs).
