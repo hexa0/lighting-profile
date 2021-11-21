@@ -10,47 +10,65 @@
     },
 
     "plugin-toolbar": {
-        "en-us" : "Lighting Profile"
+        "en-us": "Lighting Profile"
     },
 
     "plugin-button-create-profile": {
-        "en-us" : "New profile"
+        "en-us": "New profile"
     },
     "plugin-button-create-profile-desc": {
-        "en-us" : "Creates a new lighting profile from the current lighting"
+        "en-us": "Creates a new lighting profile from the current lighting"
     },
     "plugin-button-create-profile-icon": {
-        "en-us" : "rbxassetid://839798346"
+        "en-us": "rbxassetid://839798346"
     },
+
     "plugin-new-profile-default-name": {
         "en-us": "New lighting profile created at %s"
     },
 
+    "plugin-history-new-profile": {
+        "en-us": "Creating lighting profile"
+    },
+    "plugin-history-new-profile-success": {
+        "en-us": "Created lighting profile"
+    },
+
     "plugin-button-apply-profile": {
-        "en-us" : "Apply profile"
+        "en-us": "Apply profile"
     },
     "plugin-button-apply-profile-desc": {
-        "en-us" : "Applies the currently selected lighting profile"
+        "en-us": "Applies the currently selected lighting profile"
     },
     "plugin-button-apply-profile-icon": {
-        "en-us" : "rbxassetid://839798346"
+        "en-us": "rbxassetid://839798346"
     },
 
     "plugin-warn-apply-profile-no-selection": {
-        "en-us" : "WARNING: You must select a lighting profile"
-    },
-
-    "plugin-history-new-profile": {
-        "en-us" : "Creating lighting profile"
-    },
-    "plugin-history-new-profile-success": {
-        "en-us" : "Created lighting profile"
+        "en-us": "WARNING: You must select a lighting profile"
     },
 
     "plugin-history-apply-profile": {
-        "en-us" : "Changing lighting profile"
+        "en-us": "Changing lighting profile"
     },
     "plugin-history-applied-profile": {
-        "en-us" : "Changed lighting profile"
+        "en-us": "Changed lighting profile"
+    },
+
+    "plugin-button-get-api": {
+        "en-us": "Get API"
+    },
+    "plugin-button-get-api-desc": {
+        "en-us": "Gives you the API required to use this plugin in your code"
+    },
+    "plugin-button-get-api-icon": {
+        "en-us": "rbxassetid://5168594673"
+    },
+
+    "plugin-history-get-api": {
+        "en-us": "Getting API"
+    },
+    "plugin-history-got-api": {
+        "en-us": "Got API"
     }
 }

@@ -29,7 +29,6 @@ createProfileButton.Click:Connect(function()
     newProfileObj:SetAttribute("Created_UTC_Int", currentUTCTime)
     newProfileObj:SetAttribute("Created_UTC_Formatted", currentFormattedUTCTime)
     newProfileObj.Name = API:_GetLang("plugin-new-profile-default-name"):format(currentFormattedUTCTime)
-
     newProfileObj.Parent = Selection:Get()[1] or workspace
     Selection:Set{newProfileObj}
 
@@ -59,4 +58,24 @@ applyProfileButton.Click:Connect(function()
     end
 
     ChangeHistoryService:SetWaypoint(API:_GetLang("plugin-history-applied-profile"))
+end)
+
+local getApiButton: PluginToolbarButton = toolbar:CreateButton(
+    "get-api-1584eeb8-e65c-4c1f-8a07-753d4447d922", -- buttonId
+    API:_GetLang("plugin-button-get-api-desc"), -- tooltip
+    API:_GetLang("plugin-button-get-api-icon"), -- icon
+    API:_GetLang("plugin-button-get-api") -- text
+)
+getApiButton.ClickableWhenViewportHidden = true
+
+getApiButton.Click:Connect(function()
+    ChangeHistoryService:SetWaypoint(API:_GetLang("plugin-history-get-api"))
+    
+    getApiButton:SetActive(false)
+
+    local APIClone = script.Parent.LightingProfileAPI:Clone()
+    APIClone.Parent = Selection:Get()[1] or workspace
+    Selection:Set{APIClone}
+
+    ChangeHistoryService:SetWaypoint(API:_GetLang("plugin-history-got-api"))
 end)
