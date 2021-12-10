@@ -10,7 +10,7 @@
     },
 
     "plugin-toolbar": {
-        "en-us": "Lighting Profile"
+        "en-us": "Lighting Profile %s"
     },
 
     "plugin-button-create-profile": {

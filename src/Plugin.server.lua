@@ -1,13 +1,14 @@
 local Selection: Selection = game:GetService("Selection")
 local ChangeHistoryService: ChangeHistoryService = game:GetService("ChangeHistoryService")
 
+local VERSION = "1.0.0"
+
 local API = require(script.Parent.LightingProfileAPI)
 API._IS_PLUGIN = true
 
 if not plugin then plugin = PluginManager():CreatePlugin() end
 
--- lighting-profile-52a6dd5f-76f2-461e-84ea-5f1c2f8427af
-local toolbar: PluginToolbar = plugin:CreateToolbar(API:_GetLang("plugin-toolbar"))
+local toolbar: PluginToolbar = plugin:CreateToolbar(API:_GetLang("plugin-toolbar"):format(VERSION))
 
 local createProfileButton: PluginToolbarButton = toolbar:CreateButton(
     "new-lighting-profile-52a6dd5f-76f2-461e-84ea-5f1c2f8427af", -- buttonId
