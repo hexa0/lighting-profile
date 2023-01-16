@@ -6,7 +6,9 @@ local VERSION = "1.0.0"
 local API = require(script.Parent.LightingProfileAPI)
 API._IS_PLUGIN = true
 
-if not plugin then plugin = PluginManager():CreatePlugin() end
+if not plugin then
+	plugin = getfenv().PluginManager():CreatePlugin()
+end
 
 local toolbar: PluginToolbar = plugin:CreateToolbar(API:_GetLang("plugin-toolbar"):format(VERSION))
 
@@ -49,7 +51,7 @@ applyProfileButton.Click:Connect(function()
     
     applyProfileButton:SetActive(false)
 
-    local profileObj: Configuration = Selection:Get()[1]
+    local profileObj: Configuration? = Selection:Get()[1] :: Configuration?
 
     if not profileObj then
         warn(API:_GetLang("plugin-warn-apply-profile-no-selection"))

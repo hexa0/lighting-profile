@@ -1,9 +1,8 @@
-local RunService: RunService = game:GetService("RunService")
 local Lighting: Lighting = game:GetService("Lighting")
 local Terrain: Terrain = workspace:FindFirstChildOfClass("Terrain")
 local LocalizationService: LocalizationService = game:GetService("LocalizationService")
 
-local LightingProfileHandler: table = {}
+local LightingProfileHandler = {}
 LightingProfileHandler._CLASSES = require(script.classes)
 LightingProfileHandler._LANG = require(script.lang)
 LightingProfileHandler._IS_PLUGIN = false
@@ -12,8 +11,8 @@ function LightingProfileHandler:_GetLang(key: string): string
 	return self._LANG[key][LocalizationService.RobloxLocaleId] or self._LANG[key]["en-us"]
 end
 
-function LightingProfileHandler:_DecodeProfileToTable(profileObj: Configuration): table
-	local profile: table = {}
+function LightingProfileHandler:_DecodeProfileToTable(profileObj: Configuration)
+	local profile = table.clone(profileObj:GetAttributes())
 
 	for key, value in pairs(profileObj:GetAttributes()) do
 		profile[key] = value
@@ -26,7 +25,7 @@ function LightingProfileHandler:_DecodeProfileToTable(profileObj: Configuration)
 	return profile
 end
 
-function LightingProfileHandler:_EncodeProfileFromTable(profile: table): table
+function LightingProfileHandler:_EncodeProfileFromTable(profile)
 	local profileObj: Configuration = Instance.new("Configuration")
 	profileObj.Name = "index"
 
@@ -48,7 +47,8 @@ function LightingProfileHandler:ApplyProfile(profileObj: Configuration): nil
 	for _, child: Instance in pairs(Lighting:GetChildren()) do
 		if child:IsA("PostEffect") or child:IsA("Sky") or child:IsA("Atmosphere") then
 			if self._IS_PLUGIN then
-				child.Parent = nil
+				-- hacky fix for this https://github.com/NightrainsRbx/RobloxLsp/issues/153 why is this still not patched wtf
+				child.Parent = nil :: Instance
 			else
 				child:Destroy()
 			end
@@ -59,7 +59,7 @@ function LightingProfileHandler:ApplyProfile(profileObj: Configuration): nil
 
 	if clouds then
 		if self._IS_PLUGIN then
-			clouds.Parent = nil
+			clouds.Parent = nil :: Instance
 		else
 			clouds:Destroy()
 		end
@@ -67,7 +67,7 @@ function LightingProfileHandler:ApplyProfile(profileObj: Configuration): nil
 
 	-- Decode the profile
 
-	local decoded: table = self:_DecodeProfileToTable(profileObj)
+	local decoded = self:_DecodeProfileToTable(profileObj)
 
 	-- Apply the profile
 
@@ -75,7 +75,7 @@ function LightingProfileHandler:ApplyProfile(profileObj: Configuration): nil
 		Lighting[key] = value
 	end
 
-	for _, postEffect: table in pairs(decoded.PostEffects) do
+	for _, postEffect in pairs(decoded.PostEffects) do
 		local postInstance = Instance.new(postEffect.ClassName, Lighting)
 
 		for key: string, value in pairs(postEffect) do
@@ -111,7 +111,7 @@ function LightingProfileHandler:ApplyProfile(profileObj: Configuration): nil
 end
 
 function LightingProfileHandler:CreateProfile(): Configuration
-	local profile: table = {}
+	local profile = {}
 
 	-- Store lighting settings
 
