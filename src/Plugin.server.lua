@@ -20,6 +20,30 @@ local createProfileButton: PluginToolbarButton = toolbar:CreateButton(
 )
 createProfileButton.ClickableWhenViewportHidden = true
 
+local applyProfileButton: PluginToolbarButton = toolbar:CreateButton(
+    "apply-lighting-profile-82aa2c36-b99e-4c71-a0ff-368a6df674c5", -- buttonId
+    API:_GetLocalizedString("plugin-button-apply-profile-desc"), -- tooltip
+    API:_GetLocalizedString("plugin-button-apply-profile-icon"), -- icon
+    API:_GetLocalizedString("plugin-button-apply-profile") -- text
+)
+applyProfileButton.ClickableWhenViewportHidden = true
+
+local overwriteButton: PluginToolbarButton = toolbar:CreateButton(
+    "overwrite-profile-77c76841-3c26-43c2-b095-64241c74d774", -- buttonId
+    API:_GetLocalizedString("plugin-button-overwrite-profile-desc"), -- tooltip
+    API:_GetLocalizedString("plugin-button-overwrite-profile-icon"), -- icon
+    API:_GetLocalizedString("plugin-button-overwrite-profile") -- text
+)
+overwriteButton.ClickableWhenViewportHidden = true
+
+local getApiButton: PluginToolbarButton = toolbar:CreateButton(
+    "get-api-1584eeb8-e65c-4c1f-8a07-753d4447d922", -- buttonId
+    API:_GetLocalizedString("plugin-button-get-api-desc"), -- tooltip
+    API:_GetLocalizedString("plugin-button-get-api-icon"), -- icon
+    API:_GetLocalizedString("plugin-button-get-api") -- text
+)
+getApiButton.ClickableWhenViewportHidden = true
+
 createProfileButton.Click:Connect(function()
     ChangeHistoryService:SetWaypoint(API:_GetLocalizedString("plugin-history-new-profile"))
 
@@ -38,14 +62,6 @@ createProfileButton.Click:Connect(function()
     ChangeHistoryService:SetWaypoint(API:_GetLocalizedString("plugin-history-new-profile-success"))
 end)
 
-local applyProfileButton: PluginToolbarButton = toolbar:CreateButton(
-    "apply-lighting-profile-82aa2c36-b99e-4c71-a0ff-368a6df674c5", -- buttonId
-    API:_GetLocalizedString("plugin-button-apply-profile-desc"), -- tooltip
-    API:_GetLocalizedString("plugin-button-apply-profile-icon"), -- icon
-    API:_GetLocalizedString("plugin-button-apply-profile") -- text
-)
-applyProfileButton.ClickableWhenViewportHidden = true
-
 applyProfileButton.Click:Connect(function()
     ChangeHistoryService:SetWaypoint(API:_GetLocalizedString("plugin-history-apply-profile"))
     
@@ -63,14 +79,6 @@ applyProfileButton.Click:Connect(function()
     ChangeHistoryService:SetWaypoint(API:_GetLocalizedString("plugin-history-applied-profile"))
 end)
 
-local getApiButton: PluginToolbarButton = toolbar:CreateButton(
-    "get-api-1584eeb8-e65c-4c1f-8a07-753d4447d922", -- buttonId
-    API:_GetLocalizedString("plugin-button-get-api-desc"), -- tooltip
-    API:_GetLocalizedString("plugin-button-get-api-icon"), -- icon
-    API:_GetLocalizedString("plugin-button-get-api") -- text
-)
-getApiButton.ClickableWhenViewportHidden = true
-
 getApiButton.Click:Connect(function()
     ChangeHistoryService:SetWaypoint(API:_GetLocalizedString("plugin-history-get-api"))
     
@@ -82,15 +90,6 @@ getApiButton.Click:Connect(function()
 
     ChangeHistoryService:SetWaypoint(API:_GetLocalizedString("plugin-history-got-api"))
 end)
-
-
-local overwriteButton: PluginToolbarButton = toolbar:CreateButton(
-    "overwrite-profile-77c76841-3c26-43c2-b095-64241c74d774", -- buttonId
-    API:_GetLocalizedString("plugin-button-overwrite-profile-desc"), -- tooltip
-    API:_GetLocalizedString("plugin-button-overwrite-profile-icon"), -- icon
-    API:_GetLocalizedString("plugin-button-overwrite-profile") -- text
-)
-overwriteButton.ClickableWhenViewportHidden = true
 
 overwriteButton.Click:Connect(function()
     ChangeHistoryService:SetWaypoint(API:_GetLocalizedString("plugin-history-overwriting-profile"))
