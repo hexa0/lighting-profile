@@ -86,9 +86,9 @@ end)
 
 local overwriteButton: PluginToolbarButton = toolbar:CreateButton(
     "overwrite-profile-77c76841-3c26-43c2-b095-64241c74d774", -- buttonId
-    API:_GetLocalizedString("plugin-button-get-api-desc"), -- tooltip
-    API:_GetLocalizedString("plugin-button-get-api-icon"), -- icon
-    API:_GetLocalizedString("plugin-button-get-api") -- text
+    API:_GetLocalizedString("plugin-button-overwrite-profile-desc"), -- tooltip
+    API:_GetLocalizedString("plugin-button-overwrite-profile-icon"), -- icon
+    API:_GetLocalizedString("plugin-button-overwrite-profile") -- text
 )
 overwriteButton.ClickableWhenViewportHidden = true
 
