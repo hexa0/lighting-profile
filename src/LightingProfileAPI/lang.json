@@ -1,10 +1,19 @@
 {
-    "unknown-class-prop": {
-        "en-us": "WARNING: \"%s\" doesn't have any known properties, Please submit an issue at https://github.com/HexaRG/lighting-profile/issues/new or update the API if it's outdated"
+    "api-warn-unknown-class-prop": {
+        "en-us": "WARNING: \"%s\" doesn't have any known properties, Please submit an issue at https://github.com/hexa0/lighting-profile/issues/new or update the API if it's outdated"
     },
-    "duplicated-name": {
+    "api-warn-duplicated-name": {
         "en-us": "WARNING: \"%s\" doesn't have a unique name, automatically renamed to \"%s\""
     },
+    "api-warn-deprecated": {
+        "en-us": "WARNING: LightingProfileHandler:%s(%s) is deprecated, use LightingProfileHandler:%s(%s) instead."
+    },
+
+	"plugin-warn-no-selection": {
+        "en-us": "WARNING: You must select a lighting profile"
+    },
+
+
     "duplicated-name-append": {
         "en-us": " - (Duplicate)"
     },
@@ -44,10 +53,6 @@
         "en-us": "rbxassetid://839798346"
     },
 
-    "plugin-warn-apply-profile-no-selection": {
-        "en-us": "WARNING: You must select a lighting profile"
-    },
-
     "plugin-history-apply-profile": {
         "en-us": "Changing lighting profile"
     },
@@ -70,5 +75,22 @@
     },
     "plugin-history-got-api": {
         "en-us": "Got API"
+    },
+
+	"plugin-button-overwrite-profile": {
+        "en-us": "Overwrite"
+    },
+    "plugin-button-overwrite-profile-desc": {
+        "en-us": "Overwrites the selected profile."
+    },
+    "plugin-button-overwrite-profile-icon": {
+        "en-us": "rbxassetid://5168594673"
+    },
+
+	"plugin-history-overwriting-profile": {
+        "en-us": "Overwriting profile..."
+    },
+    "plugin-history-overwrote-profile": {
+        "en-us": "Overwrote profile."
     }
 }

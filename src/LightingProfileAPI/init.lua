@@ -1,37 +1,50 @@
-local Lighting: Lighting = game:GetService("Lighting")
-local Terrain: Terrain = workspace:FindFirstChildOfClass("Terrain")
-local LocalizationService: LocalizationService = game:GetService("LocalizationService")
+--!nocheck
+-- silence nonsense LSP errors in studio ^
+
+local Lighting = game:GetService("Lighting")
+local Terrain = workspace:FindFirstChildOfClass("Terrain")
+local LocalizationService = game:GetService("LocalizationService")
 
 local LightingProfileHandler = {}
 LightingProfileHandler._CLASSES = require(script.classes)
 LightingProfileHandler._LANG = require(script.lang)
 LightingProfileHandler._IS_PLUGIN = false
 
-function LightingProfileHandler:_GetLang(key: string): string
+local types = require(script.types)
+
+export type ProfileData = types.ProfileData
+
+function LightingProfileHandler:_GetLocalizedString(key: string): string
 	return self._LANG[key][LocalizationService.RobloxLocaleId] or self._LANG[key]["en-us"]
 end
 
-function LightingProfileHandler:_DecodeProfileToTable(profileObj: Configuration)
-	local profile = table.clone(profileObj:GetAttributes())
+function LightingProfileHandler:DecodeProfileDataFromInstance(profileObj: Configuration | ProfileData): ProfileData
+	if typeof(profileObj) == "table" then
+		return profileObj
+	elseif typeof(profileObj) == "Instance" then
+		local profile = table.clone(profileObj:GetAttributes())
 
-	for key, value in pairs(profileObj:GetAttributes()) do
-		profile[key] = value
+		for key, value in pairs(profileObj:GetAttributes()) do
+			profile[key] = value
+		end
+	
+		for _, child in pairs(profileObj:GetChildren()) do
+			profile[child.Name] = self:DecodeProfileDataFromInstance(child)
+		end
+	
+		return profile :: ProfileData
+	else
+		error("decode failed")
 	end
-
-	for _, child in pairs(profileObj:GetChildren()) do
-		profile[child.Name] = self:_DecodeProfileToTable(child)
-	end
-
-	return profile
 end
 
-function LightingProfileHandler:_EncodeProfileFromTable(profile)
+function LightingProfileHandler:EncodeProfileDataAsInstance(profile: ProfileData)
 	local profileObj: Configuration = Instance.new("Configuration")
 	profileObj.Name = "index"
 
 	for key, value in pairs(profile) do
 		if typeof(value) == "table" then
-			local childProfileObj: Configuration = self:_EncodeProfileFromTable(value)
+			local childProfileObj: Configuration = self:EncodeProfileDataAsInstance(value)
 			childProfileObj.Parent = profileObj
 			childProfileObj.Name = key
 		else
@@ -42,24 +55,24 @@ function LightingProfileHandler:_EncodeProfileFromTable(profile)
 	return profileObj
 end
 
-function LightingProfileHandler:ApplyProfile(profileObj: Configuration): nil
+function LightingProfileHandler:ApplyProfile(profile: Configuration | ProfileData)
 	-- Cleanup old lighting stuff
 	for _, child: Instance in pairs(Lighting:GetChildren()) do
 		if child:IsA("PostEffect") or child:IsA("Sky") or child:IsA("Atmosphere") then
 			if self._IS_PLUGIN then
 				-- hacky fix for this https://github.com/NightrainsRbx/RobloxLsp/issues/153 why is this still not patched wtf
-				child.Parent = nil :: Instance
+				(child :: any).Parent = nil
 			else
 				child:Destroy()
 			end
 		end
 	end
 
-	local clouds: Clouds = Terrain:FindFirstChildOfClass("Clouds")
+	local clouds: Clouds? = Terrain:FindFirstChildOfClass("Clouds")
 
 	if clouds then
 		if self._IS_PLUGIN then
-			clouds.Parent = nil :: Instance
+			(clouds :: any).Parent = nil
 		else
 			clouds:Destroy()
 		end
@@ -67,7 +80,7 @@ function LightingProfileHandler:ApplyProfile(profileObj: Configuration): nil
 
 	-- Decode the profile
 
-	local decoded = self:_DecodeProfileToTable(profileObj)
+	local decoded = self:DecodeProfileDataFromInstance(profile) :: ProfileData
 
 	-- Apply the profile
 
@@ -86,7 +99,7 @@ function LightingProfileHandler:ApplyProfile(profileObj: Configuration): nil
 	end
 
 	if decoded.Sky then
-		local skyInstance = Instance.new("Sky",Lighting)
+		local skyInstance = Instance.new("Sky", Lighting)
 
 		for key: string, value in pairs(decoded.Sky) do
 			skyInstance[key] = value
@@ -110,7 +123,7 @@ function LightingProfileHandler:ApplyProfile(profileObj: Configuration): nil
 	end
 end
 
-function LightingProfileHandler:CreateProfile(): Configuration
+function LightingProfileHandler:CreateProfileDataFromCurrentLighting(): ProfileData
 	local profile = {}
 
 	-- Store lighting settings
@@ -129,13 +142,13 @@ function LightingProfileHandler:CreateProfile(): Configuration
 		if child:IsA("PostEffect") then
 			-- Fail-safe incase it's a new PostEffect class
 			if not self._CLASSES[child.ClassName] then
-				warn(self:_GetLang("unknown-class-prop"):format(child.ClassName))
+				warn(self:_GetLocalizedString("api-warn-unknown-class-prop"):format(child.ClassName))
 			else
 				local name: string = child.Name
 
 				if profile.PostEffects[child.Name] then
-					name = name .. self:_GetLang("duplicated-name-append")
-					warn(self:_GetLang("duplicated-name"):format(child:GetFullName(),name))
+					name ..= self:_GetLocalizedString("duplicated-name-append") :: string
+					warn(self:_GetLocalizedString("api-warn-duplicated-name"):format(child:GetFullName(),name))
 				end
 
 				profile.PostEffects[name] = {}
@@ -185,8 +198,16 @@ function LightingProfileHandler:CreateProfile(): Configuration
 		end
 	end
 
-	return self:_EncodeProfileFromTable(profile)
-	
+	return profile
+end
+
+function LightingProfileHandler:CreateProfile(): Configuration
+	warn(self:_GetLocalizedString("api-warn-deprecated"):format("CreateProfile", "", "CreateProfileInstanceFromCurrentLighting", ""))
+	return self:CreateProfileInstanceFromCurrentLighting()
+end
+
+function LightingProfileHandler:CreateProfileInstanceFromCurrentLighting(): Configuration
+	return self:EncodeProfileDataAsInstance(self:CreateProfileDataFromCurrentLighting())
 end
 
 return LightingProfileHandler
