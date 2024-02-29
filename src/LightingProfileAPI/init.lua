@@ -58,7 +58,7 @@ end
 function LightingProfileHandler:ApplyProfile(profile: Configuration | ProfileData)
 	-- Cleanup old lighting stuff
 	for _, child: Instance in pairs(Lighting:GetChildren()) do
-		if child:IsA("PostEffect") or child:IsA("Sky") or child:IsA("Atmosphere") then
+		if (child:IsA("PostEffect") or child:IsA("Sky") or child:IsA("Atmosphere")) and child.Archivable then
 			if self._IS_PLUGIN then
 				-- hacky fix for this https://github.com/NightrainsRbx/RobloxLsp/issues/153 why is this still not patched wtf
 				(child :: any).Parent = nil
@@ -70,7 +70,7 @@ function LightingProfileHandler:ApplyProfile(profile: Configuration | ProfileDat
 
 	local clouds: Clouds? = Terrain:FindFirstChildOfClass("Clouds")
 
-	if clouds then
+	if clouds and clouds.Archivable then
 		if self._IS_PLUGIN then
 			(clouds :: any).Parent = nil
 		else
@@ -139,7 +139,7 @@ function LightingProfileHandler:CreateProfileDataFromCurrentLighting(): ProfileD
 	profile.PostEffects = {}
 
 	for _, child in pairs(Lighting:GetChildren()) do
-		if child:IsA("PostEffect") then
+		if child:IsA("PostEffect") and child.Archivable then
 			-- Fail-safe incase it's a new PostEffect class
 			if not self._CLASSES[child.ClassName] then
 				warn(self:_GetLocalizedString("api-warn-unknown-class-prop"):format(child.ClassName))
