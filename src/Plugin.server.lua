@@ -1,7 +1,7 @@
 local Selection: Selection = game:GetService("Selection")
 local ChangeHistoryService: ChangeHistoryService = game:GetService("ChangeHistoryService")
 
-local VERSION = "1.0.0"
+local VERSION = "1.1.1"
 
 local API = require(script.Parent.LightingProfileAPI)
 API._IS_PLUGIN = true
