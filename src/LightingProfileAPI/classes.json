@@ -18,16 +18,19 @@
     ],
 
     "BloomEffect": [
+        "Name",
         "Enabled",
         "Intensity",
         "Size",
         "Threshold"
     ],
     "BlurEffect": [
+        "Name",
         "Enabled",
         "Size"
     ],
     "ColorCorrectionEffect": [
+        "Name",
         "Enabled",
         "Brightness",
         "Contrast",
@@ -35,6 +38,7 @@
         "TintColor"
     ],
     "DepthOfFieldEffect": [
+        "Name",
         "Enabled",
         "FarIntensity",
         "FocusDistance",
@@ -42,12 +46,14 @@
         "NearIntensity"
     ],
     "SunRaysEffect": [
+        "Name",
         "Enabled",
         "Intensity",
         "Spread"
     ],
 
     "Sky": [
+        "Name",
         "CelestialBodiesShown",
         "MoonAngularSize",
         "MoonTextureId",
@@ -62,6 +68,7 @@
         "SunTextureId"
     ],
     "Atmosphere": [
+        "Name",
         "Density",
         "Offset",
         "Color",
@@ -70,6 +77,7 @@
         "Haze"
     ],
     "Clouds": [
+        "Name",
         "Enabled",
         "Cover",
         "Density",
