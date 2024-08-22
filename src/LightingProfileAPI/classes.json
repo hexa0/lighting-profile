@@ -51,6 +51,11 @@
         "Intensity",
         "Spread"
     ],
+    "ColorGradingEffect": [
+        "Name",
+        "Enabled",
+        "TonemapperPreset"
+    ],
 
     "Sky": [
         "Name",
