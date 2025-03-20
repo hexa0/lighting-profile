@@ -8,6 +8,10 @@ great for quickly switching between different lighting while building 🧱,<br> 
 You can get the plugin [on roblox](https://www.roblox.com/library/8811872666/Lighting-Profile-Creator) or from the [releases tab!](https://github.com/hexa0/lighting-profile/releases)<br>
 alternatively you can build it from source ⬇️
 
+# API 📜
+
+for the API docs, [see here.](https://github.com/hexa0/lighting-profile-api/blob/main/docs/api.md)
+
 # Building 🧱
 
 This plugin uses [Rojo](https://github.com/rojo-rbx/rojo) for building,<br>
