@@ -11,12 +11,21 @@ alternatively you can build it from source ⬇️
 # Building 🧱
 
 This plugin uses [Rojo](https://github.com/rojo-rbx/rojo) for building,<br>
-To build this plugin from scratch, install rojo and then run:
+To build this plugin from scratch, install rojo then clone the repository with
+```bash
+git clone
+```
+then update the submodules
+```bash
+git submodule update --recursive --remote
+```
+and then run this if you're on windows
 
 ```bash
 ./build.bat
 ```
-or for linux & mac run:
+
+or if you're on linux or mac run:
 
 ```bash
 ./build.sh
