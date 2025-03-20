@@ -1,7 +1,7 @@
 {
-  "name": "LightingProfilePlugin",
-  "tree": {
-    "$className": "Folder",
+	"name": "LightingProfilePlugin",
+	"tree": {
+		"$className": "Folder",
 	"$path": "src"
-  }
+	}
 }

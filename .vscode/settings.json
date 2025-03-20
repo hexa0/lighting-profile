@@ -1,5 +1,6 @@
 {
-    "robloxLsp.diagnostics.globals": [
-        "PluginManager"
-    ]
+	"stylua.targetReleaseVersion": "latest",
+	"robloxLsp.diagnostics.globals": [
+		"PluginManager"
+	]
 }

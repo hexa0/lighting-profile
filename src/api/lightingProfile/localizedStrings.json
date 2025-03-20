@@ -1,96 +1,96 @@
 {
-    "api-warn-unknown-class-prop": {
+    "api.warn.unknown-class-prop": {
         "en-us": "WARNING: \"%s\" doesn't have any known properties, Please submit an issue at https://github.com/hexa0/lighting-profile/issues/new or update the API if it's outdated"
     },
-    "api-warn-duplicated-name": {
-        "en-us": "WARNING: \"%s\" doesn't have a unique name, automatically renamed to \"%s\""
+    "api.warn.duplicated-name": {
+        "en-us": "WARNING: \"ORIGINAL_NAME\" doesn't have a unique name, automatically renamed to \"UNIQUE_NAME\""
     },
-    "api-warn-deprecated": {
+    "api.warn.deprecated": {
         "en-us": "WARNING: LightingProfileHandler:%s(%s) is deprecated, use LightingProfileHandler:%s(%s) instead."
     },
 
-	"plugin-warn-no-selection": {
+	"plugin.warn.no-selection": {
         "en-us": "WARNING: You must select a lighting profile"
     },
 
 
-    "duplicated-name-append": {
-        "en-us": " - (Duplicate)"
+    "api.naming.duplicated-name-append": {
+        "en-us": "+"
     },
 
-    "plugin-toolbar": {
+    "plugin.toolbar": {
         "en-us": "Lighting Profile %s"
     },
 
-    "plugin-button-create-profile": {
+    "plugin.button.create-profile.title": {
         "en-us": "New profile"
     },
-    "plugin-button-create-profile-desc": {
+    "plugin.button.create-profile.description": {
         "en-us": "Creates a new lighting profile from the current lighting"
     },
-    "plugin-button-create-profile-icon": {
+    "plugin.button.create-profile.icon": {
         "en-us": "rbxassetid://839798346"
     },
 
-    "plugin-new-profile-default-name": {
+    "plugin.naming.new-profile-default-name": {
         "en-us": "New lighting profile created at %s"
     },
 
-    "plugin-history-new-profile": {
+    "plugin.history.new-profile": {
         "en-us": "Creating lighting profile"
     },
-    "plugin-history-new-profile-success": {
+    "plugin.history.new-profile-success": {
         "en-us": "Created lighting profile"
     },
 
-    "plugin-button-apply-profile": {
+    "plugin.button.apply-profile.title": {
         "en-us": "Apply profile"
     },
-    "plugin-button-apply-profile-desc": {
+    "plugin.button.apply-profile.description": {
         "en-us": "Applies the currently selected lighting profile"
     },
-    "plugin-button-apply-profile-icon": {
+    "plugin.button.apply-profile.icon": {
         "en-us": "rbxassetid://839798346"
     },
 
-    "plugin-history-apply-profile": {
+    "plugin.history.apply-profile": {
         "en-us": "Changing lighting profile"
     },
-    "plugin-history-applied-profile": {
+    "plugin.history.applied-profile": {
         "en-us": "Changed lighting profile"
     },
 
-    "plugin-button-get-api": {
+    "plugin.button.get-api.title": {
         "en-us": "Get API"
     },
-    "plugin-button-get-api-desc": {
+    "plugin.button.get-api.description": {
         "en-us": "Gives you the API required to use this plugin in your code"
     },
-    "plugin-button-get-api-icon": {
+    "plugin.button.get-api.icon": {
         "en-us": "rbxassetid://5168594673"
     },
 
-    "plugin-history-get-api": {
+    "plugin.history.get-api": {
         "en-us": "Getting API"
     },
-    "plugin-history-got-api": {
+    "plugin.history.got-api": {
         "en-us": "Got API"
     },
 
-	"plugin-button-overwrite-profile": {
+	"plugin.button.overwrite-profile.title": {
         "en-us": "Overwrite"
     },
-    "plugin-button-overwrite-profile-desc": {
+    "plugin.button.overwrite-profile.description": {
         "en-us": "Overwrites the selected profile."
     },
-    "plugin-button-overwrite-profile-icon": {
+    "plugin.button.overwrite-profile.icon": {
         "en-us": "rbxassetid://839798346"
     },
 
-	"plugin-history-overwriting-profile": {
+	"plugin.history.overwriting-profile": {
         "en-us": "Overwriting profile..."
     },
-    "plugin-history-overwrote-profile": {
+    "plugin.history.overwrote-profile": {
         "en-us": "Overwrote profile."
     }
 }
