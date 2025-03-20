@@ -1,0 +1,3 @@
+[submodule "src/api/lightingProfile"]
+	path = src/api/lightingProfile
+	url = https://github.com/hexa0/lighting-profile-api
