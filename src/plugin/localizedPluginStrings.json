@@ -1,0 +1,104 @@
+{
+	"plugin.warn.no-selection": {
+		"context": "Warning in the console output is displayed to the user when they attempt to do an action in the plugin that requires them to select a LightingProfile.",
+		"en-us": "WARNING: You must select a LightingProfile"
+	},
+
+	"plugin.toolbar": {
+		"context": "Name of the plugin followed by (%s/%s) which is replaced with the version numbers",
+		"en-us": "Lighting Profile (%s/%s)"
+	},
+
+	"plugin.button.create-profile.title": {
+		"context": "Button title for creating a new LightingProfile instance from the current lighting",
+		"en-us": "New"
+	},
+	"plugin.button.create-profile.description": {
+		"context": "Button description for creating a new LightingProfile instance from the current lighting",
+		"en-us": "Creates a new LightingProfile from the current lighting."
+	},
+	"plugin.button.create-profile.icon": {
+		"needsLocalization": false,
+		"en-us": "rbxassetid://839798346"
+	},
+
+	"plugin.naming.new-profile-default-name": {
+		"context": "Name for new LightingProfile instances, %s is replaced with the current date",
+		"en-us": "New LightingProfile created at %s"
+	},
+
+	"plugin.button.apply-profile.title": {
+		"context": "Button title for applying a selected LightingProfile to the current lighting",
+		"en-us": "Apply"
+	},
+	"plugin.button.apply-profile.description": {
+		"context": "Button description for applying a selected LightingProfile to the current lighting",
+		"en-us": "Applies the currently selected LightingProfile."
+	},
+	"plugin.button.apply-profile.icon": {
+		"needsLocalization": false,
+		"en-us": "rbxassetid://839798346"
+	},
+
+	"plugin.button.get-api.title": {
+		"context": "Button title for inserting the plugin API code into the game for use with scripts",
+		"en-us": "API"
+	},
+	"plugin.button.get-api.description": {
+		"context": "Button description for inserting the plugin API code into the game for use with scripts",
+		"en-us": "Gives you the API required to use this plugin in your code."
+	},
+	"plugin.button.get-api.icon": {
+		"needsLocalization": false,
+		"en-us": "rbxassetid://5168594673"
+	},
+
+	"plugin.button.overwrite-profile.title": {
+		"context": "Button title for overwriting the selected LightingProfile with the current lighting",
+		"en-us": "Overwrite"
+	},
+	"plugin.button.overwrite-profile.description": {
+		"context": "Button description for overwriting the selected LightingProfile with the current lighting",
+		"en-us": "Overwrites the selected LightingProfile."
+	},
+	"plugin.button.overwrite-profile.icon": {
+		"needsLocalization": false,
+		"en-us": "rbxassetid://839798346"
+	},
+
+	"plugin.history.new-profile": {
+		"needsLocalization": false,
+		"en-us": "Creating LightingProfile"
+	},
+	"plugin.history.new-profile-success": {
+		"needsLocalization": false,
+		"en-us": "Created LightingProfile"
+	},
+
+	"plugin.history.apply-profile": {
+		"needsLocalization": false,
+		"en-us": "Changing LightingProfile"
+	},
+	"plugin.history.applied-profile": {
+		"needsLocalization": false,
+		"en-us": "Changed LightingProfile"
+	},
+
+	"plugin.history.get-api": {
+		"needsLocalization": false,
+		"en-us": "Getting LightingProfile API"
+	},
+	"plugin.history.got-api": {
+		"needsLocalization": false,
+		"en-us": "Got LightingProfile API"
+	},
+
+	"plugin.history.overwriting-profile": {
+		"needsLocalization": false,
+		"en-us": "Overwriting LightingProfile..."
+	},
+	"plugin.history.overwrote-profile": {
+		"needsLocalization": false,
+		"en-us": "Overwrote LightingProfile."
+	}
+}

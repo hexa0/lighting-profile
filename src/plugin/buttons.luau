@@ -3,13 +3,12 @@
 local src = script.Parent.Parent
 
 local LightingProfile = require(src.api.lightingProfile)
-local LightingProfileUtils = require(src.api.lightingProfile.utils)
 local Utils = require(src.plugin.utils)
 local Plugin = require(src.plugin)
 
 local toolbar = Plugin.pluginObject:CreateToolbar(
-	LightingProfileUtils.GetString("plugin.toolbar")
-		:format(LightingProfile.CURRENT_VERSION.string)
+	Utils.GetString("plugin.toolbar")
+		:format(LightingProfile.CURRENT_VERSION.string, Plugin.CURRENT_VERSION.string)
 )
 
 return {
